@@ -1,13 +1,15 @@
 
-import { createClient } from '@insforge/sdk'
-import type { DiagnosisResult } from './types'
-import { error } from 'console'
-
-
+import { createClient, createAdminClient } from "@insforge/sdk";
+import type { DiagnosisResult } from "./types";
 
 const insforge = createClient({
   baseUrl: process.env.INSFORGE_BASE_URL!,
-  anonKey: process.env.INSFORGE_ANON_KEY,
+  anonKey: process.env.INSFORGE_ANON_KEY!,
+});
+
+const insforgeAdmin = createAdminClient({
+  baseUrl: process.env.INSFORGE_BASE_URL!,
+  apiKey: process.env.INSFORGE_API_KEY!,
 });
 
 export default insforge;
@@ -78,7 +80,9 @@ export async function uploadImageToStorage(file: Buffer | Blob, filename: string
     blob = file
   }
 
-  const { data, error } = await insforge.storage.from('plant-images').upload(filename, blob);
+  const { data, error } = await insforgeAdmin.storage
+  .from("plant-image")
+  .upload(filename, blob);
 
   if (error) {
     throw new Error(`Failed to upload image: ${error.message}`);
