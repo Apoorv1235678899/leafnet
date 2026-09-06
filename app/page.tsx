@@ -57,7 +57,7 @@ export default function HomePage() {
         <div className="relative max-w-3xl mx-auto text-center px-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3.5 py-1.5 text-xs font-medium text-green-700 mb-6">
             <span className="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse" />
-            Powered by Claude AI Vision
+            Powered by Gemini Vision
           </div>
 
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-slate-900 leading-[1.05] tracking-tight mb-6">
