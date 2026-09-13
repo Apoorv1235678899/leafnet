@@ -21,7 +21,7 @@ and prevention recommendations.
 - TypeScript
 - Tailwind CSS
 - AI API
-- MongoDB / InsForge
+- InsForge
 - React
 - Express.js
 - Node.js
